@@ -1,0 +1,126 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="loginPwdInput.PrefixSvg" xml:space="preserve">
+    <value>&lt;svg t="1726840173807" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="9045" width="16" height="16"&gt;&lt;path d="M869.012601 642.85835c12.107759 0 21.912056-10.031471 21.912056-22.38687l0-196.638519c0-46.985104-37.273928-85.09405-83.262332-85.09405l-75.425853 0c-0.022513-0.021489-0.022513-0.067538-0.047072-0.089028l-7.858992 0 0-62.188364c0-103.028515-81.636299-186.584536-182.363398-186.584536l-36.479843 0c-100.045577 0-181.165106 82.449827-182.2713 184.529737 0 0.181125-0.11154 0.316202-0.11154 0.497327 0 0.113587 0.065492 0.203638 0.065492 0.315178 0 0.407276-0.065492 0.814552-0.065492 1.242294l0.316202 0c0.858554 12.132318 10.704806 21.799492 23.040762 21.799492 12.377912 0 22.204721-9.667174 23.037692-21.799492l0.227174 0c3.479241-77.863369 63.339584-139.938146 136.844691-139.938146l34.290991 0c75.765591 0 137.184429 65.825195 137.184429 147.031705l0 55.095829 34.108842 0c0 0.021489 0 0.067538 0.023536 0.089028L355.676164 338.739934c0-0.021489 0.021489-0.067538 0.045025-0.089028l-49.334615 0c-0.022513 0.021489-0.045025 0.067538-0.045025 0.089028l-95.483678 0c-45.99045 0-83.263355 38.108946-83.263355 85.09405l0 422.777933c0 46.984081 37.272905 85.070514 83.263355 85.070514l596.804455 0c45.988404 0 83.262332-38.086433 83.262332-85.070514l0-24.599258c-0.047072-12.311397-9.850345-22.295795-21.912056-22.295795s-21.842471 9.984399-21.913079 22.295795l0 0.066515c0 0.021489 0 0.021489 0 0.046049 0 0 0 0.046049 0 0.066515l0 19.946284c0 24.733311-19.6045 44.771693-43.820018 44.771693L215.238644 886.909715c-24.216541 0-43.821041-20.038382-43.821041-44.771693L171.417603 428.306856c0-24.736381 19.6045-44.771693 43.821041-44.771693L803.278481 383.535163c24.215518 0 43.820018 20.036335 43.820018 44.771693l0 192.164624C847.099523 632.826879 856.904843 642.85835 869.012601 642.85835zM517.142625 647.328152l-31.601742 0c-4.38282 0-7.885598 3.569292-7.885598 7.972579l0 95.510284c0 4.40431 3.524267 7.951089 7.885598 7.951089l31.601742 0c0.947582 0 1.807159-0.227174 2.620687-0.541329 64.87659-5.399987 115.860774-60.043514 115.880217-126.791731 0-70.344115-56.607252-127.35762-126.404921-127.35762-66.234517 0-120.491235 51.365878-125.866662 116.736725-0.273223 0.837064-0.497327 1.699712-0.497327 2.64627l0 31.847336c0 4.406356 3.523243 7.954159 7.882528 7.954159l31.602765 0c4.359284 0 7.904017-3.548826 7.904017-7.954159l0-7.972579c-1.036609-5.149277 0-10.434653 0-15.900132 0-43.9817 35.353183-79.606059 78.974679-79.606059 43.640939 0 78.992075 35.623335 78.992075 79.606059 0 38.489616-27.130917 70.612221-63.204507 77.998445l0-54.125735C525.026176 650.897444 521.502933 647.328152 517.142625 647.328152z" fill="#5D5D5D" p-id="9046"&gt;&lt;/path&gt;&lt;/svg&gt;</value>
+  </data>
+  <data name="loginActInput.PrefixSvg" xml:space="preserve">
+    <value>&lt;svg t="1726839463596" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="8538" width="128" height="128"&gt;&lt;path d="M808.854477 375.633193c0-163.997098-134.543276-296.918433-300.536844-296.918433-165.995615 0-300.536844 132.921335-300.536844 296.918433 0 94.696756 45.01831 178.827875 114.873284 233.189993-125.261888 63.085804-213.430974 188.69357-223.198431 334.665129l44.950771 0c10.544147-136.692219 99.246375-257.717619 223.043912-305.83143 39.333844 18.691711 94.296643 34.896788 140.867308 34.896788 46.571688 0 90.499154-10.767228 129.836067-29.455869l30.833239-17.869996 24.970718-16.403598C763.838214 554.461067 808.854477 470.329948 808.854477 375.633193zM508.316609 624.184035c-138.957819 0-251.590062-111.277386-251.590062-248.570285 0-137.251967 112.632243-248.550843 251.590062-248.550843 138.957819 0 251.613598 111.298875 251.613598 248.550843C759.930207 512.904603 652.85554 624.184035 508.316609 624.184035zM762.570337 652.440589l-0.221034 0.312108c-4.907777-4.683672-11.453866-7.633864-18.779715-7.633864-15.117302 0-27.347858 5.746888-27.347858 20.863167 0 10.431583 6.037507 19.178805 14.603603 23.786753l-0.177032 0.268106c82.176604 58.731636 123.620505 147.655921 131.789559 253.452479l54.738695 0C909.319609 825.970808 850.562391 721.331609 762.570337 652.440589z" fill="#5D5D5D" p-id="8539"&gt;&lt;/path&gt;&lt;/svg&gt;</value>
+  </data>
+</root>

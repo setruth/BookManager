@@ -1,0 +1,285 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{8AB49266-4BD3-4176-8241-52C636CFA0B8}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>BookManager</RootNamespace>
+    <AssemblyName>BookManager</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <LangVersion>8</LangVersion>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <LangVersion>8</LangVersion>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AntdUI, Version=1.6.2.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\AntdUI.1.6.2\lib\net46\AntdUI.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Design" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Component\BaseDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Component\BaseDialog.Designer.cs">
+      <DependentUpon>BaseDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Component\BaseWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Component\BaseWindow.Designer.cs">
+      <DependentUpon>BaseWindow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DB\Entity\BookInfoEntity.cs" />
+    <Compile Include="DB\Entity\BorrowInfoEntity.cs" />
+    <Compile Include="DB\Entity\ReaderInfoEntity.cs" />
+    <Compile Include="DB\Entity\ReaderTypeEntity.cs" />
+    <Compile Include="DB\Repository\BookInfoRepository.cs" />
+    <Compile Include="DB\Repository\BorrowInfoRepository.cs" />
+    <Compile Include="DB\Repository\LoginInfoRepository.cs" />
+    <Compile Include="DB\Repository\ReaderInfoRepository.cs" />
+    <Compile Include="DB\Repository\ReaderTypeRepository.cs" />
+    <Compile Include="DB\SqlServerHelper.cs" />
+    <Compile Include="Model\BroadcastType.cs" />
+    <Compile Include="Model\CustomEvent.cs" />
+    <Compile Include="Model\SQLRes.cs" />
+    <Compile Include="Page\Frame\ChildPage\Book\Component\BookUpsertDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Page\Frame\ChildPage\Book\Component\BookUpsertDialog.Designer.cs">
+      <DependentUpon>BookUpsertDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Page\Frame\ChildPage\Book\Book.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Page\Frame\ChildPage\Book\Book.Designer.cs">
+      <DependentUpon>Book.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Page\Frame\ChildPage\Book\Model\BookInfo.cs" />
+    <Compile Include="Page\Frame\ChildPage\Book\Model\BookInfoItem.cs" />
+    <Compile Include="Page\Frame\ChildPage\Borrow\Borrow.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Page\Frame\ChildPage\Borrow\Borrow.Designer.cs">
+      <DependentUpon>Borrow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Page\Frame\ChildPage\Borrow\Component\AddBorrowDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Page\Frame\ChildPage\Borrow\Component\AddBorrowDialog.Designer.cs">
+      <DependentUpon>AddBorrowDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Page\Frame\ChildPage\Borrow\Model\BorrowEnum.cs" />
+    <Compile Include="Page\Frame\ChildPage\Borrow\Model\BorrowInfo.cs" />
+    <Compile Include="Page\Frame\ChildPage\Borrow\Model\BorrowInfoItem.cs" />
+    <Compile Include="Page\Frame\ChildPage\Reader\Component\ReaderUpsertDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Page\Frame\ChildPage\Reader\Component\ReaderUpsertDialog.Designer.cs">
+      <DependentUpon>ReaderUpsertDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Page\Frame\ChildPage\Reader\Model\ReaderInfo.cs" />
+    <Compile Include="Page\Frame\ChildPage\Reader\Model\ReaderInfoItem.cs" />
+    <Compile Include="Page\Frame\ChildPage\ReaderType\Model\ReaderTypeInfo.cs" />
+    <Compile Include="Page\Frame\ChildPage\ReaderType\Model\ReaderTypeItem.cs" />
+    <Compile Include="Page\Welcome\Component\Login.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Page\Welcome\Component\Login.Designer.cs">
+      <DependentUpon>Login.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Page\Welcome\Component\Register.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Page\Welcome\Component\Register.Designer.cs">
+      <DependentUpon>Register.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Page\Welcome\Welcome.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Page\Welcome\Welcome.Designer.cs">
+      <DependentUpon>Welcome.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Util\IdGenerator.cs" />
+    <Compile Include="Util\Loading.cs" />
+    <Compile Include="Util\BroadcastCenter.cs" />
+    <Compile Include="Util\Notification.cs" />
+    <Compile Include="Util\SqlServerUtil.cs" />
+    <Compile Include="DB\Entity\LoginInfoEntity.cs" />
+    <Compile Include="Model\AppConstant.cs" />
+    <Compile Include="Model\MenuTag.cs" />
+    <Compile Include="Page\Frame\ChildPage\Reader\Reader.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Page\Frame\ChildPage\Reader\Reader.Designer.cs">
+      <DependentUpon>Reader.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Page\Frame\ChildPage\ReaderType\Component\ReaderTypeUpsertDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Page\Frame\ChildPage\ReaderType\Component\ReaderTypeUpsertDialog.Designer.cs">
+      <DependentUpon>ReaderTypeUpsertDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Page\Frame\ChildPage\ReaderType\ReaderType.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Page\Frame\ChildPage\ReaderType\ReaderType.Designer.cs">
+      <DependentUpon>ReaderType.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Page\Frame\Frame.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Page\Frame\Frame.Designer.cs">
+      <DependentUpon>Frame.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Component\BaseDialog.resx">
+      <DependentUpon>BaseDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Component\BaseWindow.resx">
+      <DependentUpon>BaseWindow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Page\Frame\ChildPage\Book\Book.resx">
+      <DependentUpon>Book.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Page\Frame\ChildPage\Book\Component\BookUpsertDialog.resx">
+      <DependentUpon>BookUpsertDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Page\Frame\ChildPage\Borrow\Borrow.resx">
+      <DependentUpon>Borrow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Page\Frame\ChildPage\Borrow\Component\AddBorrowDialog.resx">
+      <DependentUpon>AddBorrowDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Page\Frame\ChildPage\Reader\Component\ReaderUpsertDialog.resx">
+      <DependentUpon>ReaderUpsertDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Page\Frame\ChildPage\Reader\Reader.resx">
+      <DependentUpon>Reader.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Page\Frame\ChildPage\ReaderType\Component\ReaderTypeUpsertDialog.resx">
+      <DependentUpon>ReaderTypeUpsertDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Page\Frame\ChildPage\ReaderType\ReaderType.resx">
+      <DependentUpon>ReaderType.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Page\Frame\Frame.resx">
+      <DependentUpon>Frame.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Page\Welcome\Component\Login.resx">
+      <DependentUpon>Login.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Page\Welcome\Component\Register.resx">
+      <DependentUpon>Register.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Page\Welcome\Welcome.resx">
+      <DependentUpon>Welcome.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\loginBG.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\logo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\logo.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Z3NceSeZqgI.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.7.2">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.7.2 %28x86 和 x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\user.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
