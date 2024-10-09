@@ -22,6 +22,7 @@ namespace BookManager.Page.Frame.ChildPage.Book
     {
         private Form _context;
         private BookInfoRepository _bookInfoRep = BookInfoRepository.GetRep();
+        private BorrowInfoRepository _borrowInfoRep = BorrowInfoRepository.GetRep();
         
         private List<BookInfoItem> sourceItemList = new List<BookInfoItem>();
         private List<BookInfoItem> renderItemList = new List<BookInfoItem>();
@@ -92,7 +93,7 @@ namespace BookManager.Page.Frame.ChildPage.Book
             }
 
             new AntdUI.Modal.Config(_context, "书籍删除提示",
-                $"你确定要删除书籍{record.Name}吗",
+                $"你确定要删除书籍{record.Name}吗，删除图书会同时删除相关的借阅记录",
                 AntdUI.TType.Warn)
             {
                 Font = new Font("微软雅黑", 12),
@@ -102,6 +103,7 @@ namespace BookManager.Page.Frame.ChildPage.Book
                     {
                         BroadcastCenter.Publish(new FrameLoadingLaunchBcast("正在删除"));
                     }));
+                    _borrowInfoRep.DeleteBorrowInfoByBook(record.BookId);
                     var (msg, res) = _bookInfoRep.DeleteBookInfo(record.BookId);
                     if (res)
                     {
@@ -179,7 +181,7 @@ namespace BookManager.Page.Frame.ChildPage.Book
                 return;
             }
             new AntdUI.Modal.Config(_context, "批量删除提示",
-                $"你确定要删除所选的{selectItemList.Count}项吗？已借出的书籍无法删除",
+                $"你确定要删除所选的{selectItemList.Count}项吗？已借出的书籍无法删除，删除图书会同时删除相关的借阅记录",
                 AntdUI.TType.Warn)
             {
                 Font = new Font("微软雅黑", 12),
@@ -198,6 +200,7 @@ namespace BookManager.Page.Frame.ChildPage.Book
                             delFailList.Add(delItem);
                             continue;
                         }
+                        _borrowInfoRep.DeleteBorrowInfoByBook(delItem.BookId);
                         var (_, res) = _bookInfoRep.DeleteBookInfo(delItem.BookId);
                         if (!res)
                         {

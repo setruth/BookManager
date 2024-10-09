@@ -77,6 +77,41 @@ namespace BookManager.DB.Repository
                 ? new SQLRes<bool>("删除成功", true)
                 : new SQLRes<bool>("删除失败，未找到匹配的记录", false);
         }
+        /// <summary>
+        /// 删除借阅记录基于读者ID
+        /// </summary>
+        /// <param name="readerId"></param>
+        /// <returns></returns>
+        public SQLRes<bool> DeleteBorrowInfoByReader(string readerId)
+        {
+            var sql = $"DELETE FROM {TableName} WHERE readerId = @readerId ";
+            var parameters = new[]
+            {
+                new SqlParameter("@readerId", readerId),
+            };
+
+            return _sqlHelper.ExecuteNonQuery(sql, parameters) > 0
+                ? new SQLRes<bool>("删除成功", true)
+                : new SQLRes<bool>("删除失败，未找到匹配的记录", false);
+        }
+        
+        /// <summary>
+        /// 删除借阅记录基于读者ID
+        /// </summary>
+        /// <param name="bookId"></param>
+        /// <returns></returns>
+        public SQLRes<bool> DeleteBorrowInfoByBook(string bookId)
+        {
+            var sql = $"DELETE FROM {TableName} WHERE bookId = @bookId ";
+            var parameters = new[]
+            {
+                new SqlParameter("@bookId", bookId),
+            };
+
+            return _sqlHelper.ExecuteNonQuery(sql, parameters) > 0
+                ? new SQLRes<bool>("删除成功", true)
+                : new SQLRes<bool>("删除失败，未找到匹配的记录", false);
+        }
 
         /// <summary>
         /// 更新借阅状态

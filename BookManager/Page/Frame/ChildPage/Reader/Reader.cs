@@ -143,7 +143,7 @@ namespace BookManager.Page.Frame.ChildPage.Reader
             }
 
             new AntdUI.Modal.Config(_context, "读者信息删除提示",
-                $"你确定要删除读者【{record.Name}】吗",
+                $"你确定要删除读者【{record.Name}】吗，读者删除会同步删除已经借书的历史记录",
                 AntdUI.TType.Warn)
             {
                 Font = new Font("微软雅黑", 12),
@@ -153,6 +153,7 @@ namespace BookManager.Page.Frame.ChildPage.Reader
                     {
                         BroadcastCenter.Publish(new FrameLoadingLaunchBcast($"正在删除{record.Name}信息"));
                     }));
+                    _borrowInfoRep.DeleteBorrowInfoByReader(record.ReaderId);
                     var (msg, res) = _readerInfoRep.DeleteReaderInfo(record.ReaderId);
                     if (!res)
                     {
@@ -225,7 +226,7 @@ namespace BookManager.Page.Frame.ChildPage.Reader
             }
 
             new AntdUI.Modal.Config(_context, "批量删除提示",
-                $"你确定要删除所选的{selectItemList.Count}项吗？",
+                $"你确定要删除所选的{selectItemList.Count}项吗？读者删除会同步删除已经借书的历史记录",
                 AntdUI.TType.Warn)
             {
                 Font = new Font("微软雅黑", 12),
@@ -247,6 +248,7 @@ namespace BookManager.Page.Frame.ChildPage.Reader
                         }
 
                         var (_, res) = _readerInfoRep.DeleteReaderInfo(readerInfoItem.ReaderId);
+                        _borrowInfoRep.DeleteBorrowInfoByReader(readerInfoItem.ReaderId);
                         if (!res)
                         {
                             delFailList.Add(readerInfoItem);
