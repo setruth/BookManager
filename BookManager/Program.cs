@@ -19,7 +19,7 @@ namespace BookManager
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             
-            Application.Run(new Frame());
+            Application.Run(new Welcome());
         }
     }
 }
